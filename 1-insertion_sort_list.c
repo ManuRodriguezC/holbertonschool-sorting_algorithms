@@ -14,7 +14,7 @@ void insertion_sort_list(listint_t **list)
 	while (*list != NULL)
 	{
 		len++;
-		node = node->next;
+		*list = *list->next;
 	}
 
 	while (j < len)
