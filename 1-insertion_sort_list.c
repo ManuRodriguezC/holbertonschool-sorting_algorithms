@@ -10,6 +10,9 @@ void insertion_sort_list(listint_t **list)
 	listint_t *temp = *list;
 	listint_t *before, *current;
 
+	if (!list || !list->next)
+		return;
+
 	while (temp)
 	{
 		while ((temp->prev) && (temp->n < temp->prev->n))
