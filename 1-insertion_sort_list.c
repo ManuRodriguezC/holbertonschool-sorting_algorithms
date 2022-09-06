@@ -7,12 +7,13 @@
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *temp = *list;
+	listint_t *temp;
 	listint_t *before, *current;
 
 	if (list == NULL || (*list)->next == NULL)
 		return;
 
+	temp = *list;
 	while (temp)
 	{
 		while ((temp->prev) && (temp->n < temp->prev->n))
