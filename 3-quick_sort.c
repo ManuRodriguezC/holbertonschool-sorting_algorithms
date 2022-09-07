@@ -30,9 +30,10 @@ void quick_sort_recursive(int *array, size_t size, int low, int high)
 	{
 		pivot = partition(array, size, low, high);
 
+		quick_sort_recursive(array, size, low, pivot - 1);
+
 		quick_sort_recursive(array, size, pivot + 1, high);
 
-		quick_sort_recursive(array, size, low, pivot - 1);
 	}
 }
 
