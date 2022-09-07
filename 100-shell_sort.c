@@ -14,18 +14,18 @@ void shell_sort(int *array, size_t size)
 	if (!array || size == 0)
 		return;
 
+	print_array(array, size);
 	for (med = med * 3 + 1; med > 0; med /= 3)
 	{
-	for (i = med; i < size; i++)
-
-	{
-		temp = array[i];
-		for (j = i; j >= med && array[j - med] > temp; j -= med)
+		for (i = med; i < size; i++)
 		{
-			array[j] = array[j - med];
+			temp = array[i];
+			for (j = i; j >= med && array[j - med] > temp; j -= med)
+			{
+				array[j] = array[j - med];
+			}
+			array[j] = temp;
 		}
-		array[j] = temp;
-	}
 		print_array(array, size);
 	}
 }
