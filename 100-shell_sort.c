@@ -11,7 +11,7 @@ void shell_sort(int *array, size_t size)
 	if (!array || size == 0)
 		return;
 
-	size_t med = 1, i, j;
+	size_t med = 1, i = 0, j = 0;
 	int temp;
 
 	for (med = med * 3 + 1; med > 0; med /= 3)
