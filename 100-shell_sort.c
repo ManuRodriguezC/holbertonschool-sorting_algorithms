@@ -13,8 +13,10 @@ void shell_sort(int *array, size_t size)
 
 	if (!array || size == 0 || size < 2)
 		return;
-	if (array[0] < array[1])
+
+	if (array[0] <= array[1])
 		print_array(array, size);
+	
 	for (med = med * 3 + 1; med > 0; med /= 3)
 	{
 		for (i = med; i < size; i++)
