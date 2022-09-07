@@ -8,13 +8,11 @@
  */
 void shell_sort(int *array, size_t size)
 {
-	if (!array || size == 0)
-		return;
-
-	size_t med, i, j;
+	size_t med = 1, i = 0, j = 0;
 	int temp;
 
-	med = 1;
+	if (!array || size == 0)
+		return;
 
 	for (med = med * 3 + 1; med > 0; med /= 3)
 	{
