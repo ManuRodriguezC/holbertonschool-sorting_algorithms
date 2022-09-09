@@ -26,7 +26,8 @@ void shell_sort(int *array, size_t size)
 			array[1] = temp;
 			print_array(array, size);
 		}
-		print_array(array, size);
+		else if (array[0] < array[1])
+			print_array(array, size);
 	}
 	else
 	{
