@@ -14,20 +14,35 @@ void shell_sort(int *array, size_t size)
 	if (!array || size == 0 || size < 2)
 		return;
 
-	if (array[0] <= array[1])
-		print_array(array, size);
+	while (med < size / 3)
+		med = med * 3 + 1;
 
-	for (med = med * 3 + 1; med > 0; med /= 3)
+	if (size == 2)
 	{
-		for (i = med; i < size; i++)
+		if (array[0] > array[1])
 		{
-			temp = array[i];
-			for (j = i; j >= med && array[j - med] > temp; j -= med)
-			{
-				array[j] = array[j - med];
-			}
-			array[j] = temp;
+			temp = array[0];
+			array[0] = array[1];
+			array[1] = temp;
+			print_array(array, size);
 		}
 		print_array(array, size);
+	}
+	else
+	{
+
+		for (; med > 0; med = (med - 1) / 3)
+		{
+			for (i = med; i < size; i++)
+			{
+				temp = array[i];
+				for (j = i; j >= med && array[j - med] > temp; j -= med)
+				{
+					array[j] = array[j - med];
+				}
+				array[j] = temp;
+			}
+			print_array(array, size);
+		}
 	}
 }
