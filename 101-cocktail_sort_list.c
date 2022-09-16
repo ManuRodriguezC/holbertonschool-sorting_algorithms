@@ -58,8 +58,8 @@ void cocktail_sort_list(listint_t **list)
 
 	if (list == NULL || *list == NULL)
 		return;
-	*head = *list;
-	*len = *list;
+	head = *list;
+	len = *list;
 
 	for (count = 0; len != NULL; count++)
 		len = len->next;
