@@ -53,11 +53,13 @@ listint_t *reverse(listint_t *head, listint_t *tail, listint_t **list)
  */
 void cocktail_sort_list(listint_t **list)
 {
-	listint_t *tail, *head = *list, *len = *list;
+	listint_t *tail = NULL, *head = NULL, *len = NULL;
 	int count = 0, n = 0;
 
 	if (list == NULL || *list == NULL)
 		return;
+	*head = *list;
+	*len = *list;
 
 	for (count = 0; len != NULL; count++)
 		len = len->next;
